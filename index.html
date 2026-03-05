@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Vault</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="app">
+        <!-- 动态背景层 -->
+        <div class="bg-grid"></div>
+        <div class="ambient-glow" id="ambient-glow"></div>
+
+        <!-- 顶部信息 -->
+        <header>
+            <div class="brand">
+                <span class="logo-mark"></span>
+                QUANTUM VAULT
+            </div>
+
+            <div class="user-panel">
+                <button id="login-btn" class="auth-btn">Google Login</button>
+                <div id="user-info" class="hidden">
+                    <img id="user-avatar" src="" alt="avatar">
+                    <span id="user-name"></span>
+                    <button id="logout-btn" class="auth-btn logout">Logout</button>
+                </div>
+            </div>
+
+            <div class="combo-tracker" id="combo-tracker">
+                <div class="combo-label">COMBO MULTIPLIER</div>
+                <div class="combo-value" id="combo">1.0x</div>
+                <div class="combo-bar-container">
+                    <div class="combo-bar" id="combo-bar"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 中心奇点 / 金库核心 -->
+        <main>
+            <div class="core-wrapper" id="core-wrapper">
+                <!-- 几层旋转的光环 -->
+                <div class="core-ring ring-outer"></div>
+                <div class="core-ring ring-inner"></div>
+                <div class="core-center" id="core-center"></div>
+
+                <!-- 悬浮的巨型全息数字 -->
+                <div class="hologram-display">
+                    <div class="hologram-label">TOTAL ASSETS</div>
+                    <div class="hologram-value" id="score">0</div>
+                    <div class="hologram-highscore hidden" id="highscore-display">HIGH SCORE: <span
+                            id="highscore-val">0</span></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 底部控制台 -->
+        <footer class="controls">
+            <button class="coin-btn attr-china" id="btn-china" data-type="china" data-value="1">
+                <div class="btn-glare"></div>
+                <div class="btn-content">
+                    <div class="coin-icon icon-china">
+                        <div class="hole"></div>
+                    </div>
+                    <span class="btn-text">ANCIENT CHINA</span>
+                    <span class="btn-val">+1</span>
+                </div>
+            </button>
+            <button class="coin-btn attr-rome" id="btn-rome" data-type="rome" data-value="5">
+                <div class="btn-glare"></div>
+                <div class="btn-content">
+                    <div class="coin-icon icon-rome">
+                        <span>🏛️</span>
+                    </div>
+                    <span class="btn-text">ROMAN EMPIRE</span>
+                    <span class="btn-val">+5</span>
+                </div>
+            </button>
+            <button class="coin-btn attr-egypt" id="btn-egypt" data-type="egypt" data-value="10">
+                <div class="btn-glare"></div>
+                <div class="btn-content">
+                    <div class="coin-icon icon-egypt">
+                        <span>👁️</span>
+                    </div>
+                    <span class="btn-text">EGYPTIAN GOLD</span>
+                    <span class="btn-val">+10</span>
+                </div>
+            </button>
+        </footer>
+    </div>
+
+    <!-- 特效层：用于容纳飞行的硬币和粒子 -->
+    <div id="fx-layer"></div>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
